@@ -14,7 +14,7 @@ using System.Threading;
 namespace MicrowaveOven.Tests.Integration
 {
     [TestFixture()]
-    class Step6_UserInterfaceButton
+    class IT6UserInterfaceButton
     {
         private CookController _cookController;
         private IDisplay _display;
@@ -106,8 +106,8 @@ namespace MicrowaveOven.Tests.Integration
             _timeButton.Press();
             _timeButton.Press();
             _startCancelButton.Press();
-            Thread.Sleep(121000);
-            _output.Received(1).OutputLine(Arg.Is<string>(str => str.Contains("off")));
+            Thread.Sleep(millisecondsTimeout: 121000);
+            _output.Received().OutputLine(Arg.Is<string>(str => str.Contains("off")));
 
         }
 
