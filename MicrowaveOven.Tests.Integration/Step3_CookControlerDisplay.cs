@@ -34,6 +34,7 @@ namespace MicrowaveOven.Tests.Integration
         [TestCase(60, "01:00")]
         [TestCase(59, "00:59")]
         [TestCase(61, "01:01")]
+        [TestCase(61, "01:03")]
         public void Display_StartTime_ShowTimeRemaining(int time, string outputStr)
         {
             _cookController.StartCooking(50, time);
